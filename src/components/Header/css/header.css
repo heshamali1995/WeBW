@@ -120,6 +120,11 @@ header .hero .clients div:last-of-type {
     height: 100%;
   }
 }
+@media all and (min-width: 576px) and (max-width: 1919px) {
+  header .hero .hero-text {
+    width: 75%;
+  }
+}
 /* XSmall Media Query */
 @media all and (max-width: 575px) {
   header .dropdown-menu.show {
