@@ -1,0 +1,305 @@
+@use "../../../sass/base/variables" as *;
+@use "../../../sass/base/function" as * ;
+
+header {
+    padding: 54px 0px 103px 0px;
+    background-image: url("../../../assets/images/background.png");
+    background-size: cover;
+    background-position: center center;
+    color: $white;
+
+    // Dropdown menu
+    .dropdown-menu {
+        position: absolute;
+        width: 90%;
+        height: 0px;
+        background-color: $white;
+        z-index: 20;
+        top: 114px;
+        left: 5%;
+        display: none;
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+    }
+
+    // Navbar
+    nav {
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 213px;
+        .logo {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 77px;
+                width: 13px;
+                height: 2px;
+                background-color: $white;
+            }
+            .v-image {
+                position: absolute;
+                left: 67px;
+                top: 9px;
+            }
+        }
+        .bars {
+            display: none;
+            cursor: pointer;
+        }
+        ul {
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            li {
+                list-style: none;
+                a {
+                    color: $white;
+                    font-size: pxToRem(14);
+                }
+            }
+        }
+    }
+
+    // Hero Section
+    .hero {
+        .hero-text {
+            width: 41%;
+            h3 {
+                margin-bottom: 35px;
+            }
+            h1 {
+                font-size: pxToRem(58);
+                margin-bottom: 10px;
+                line-height: 68px;
+            }
+            p {
+                font-size: pxToRem(18);
+                padding-right: 10px;
+                color: #ffffff;
+                margin-bottom: 32px;
+            }
+            button {
+                background-image: none;
+                background-color: $white;
+                color: $mainColor;
+                margin-bottom: 257px;
+            }
+        }
+        .dashboard {
+            position: absolute;
+            top: 209px;
+            right: 96px;
+            box-shadow: 0px 0px 25px rgba(0,0,0,0.07 );
+        }
+        .clients {
+            width: 100%;
+            justify-content: center;
+            div {
+                margin-right: 9px;
+            }
+            div:last-of-type {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+/* XSmall To XLarge Media Query */
+
+@media all and (max-width: 1919px) {
+    header {
+        nav {
+            margin-bottom: 100px;
+            gap: 20px;
+        }
+        .hero {
+            .hero-container {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .hero-text {
+                width: 100%;
+            }
+            .dashboard {
+                position: relative;
+                top: 0px;
+                right: 0px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+} 
+
+/* XSmall Media Query */
+
+@media all and (max-width: 575px) {
+    header {
+        .dropdown-menu.show {
+            display: block;
+            animation: moving 0.3s linear forwards;
+            @keyframes moving {
+                0% {
+                    height: 0px;
+                }
+                100% {
+                    height: 100px;
+                }
+            }
+        }
+        nav {
+            flex-wrap: wrap;
+            ul.flex {
+                display: none;
+            }
+            .header-button {
+                width: 100%;
+            }
+            .logo {
+                width: 70%;
+            }
+            .bars {
+                display: block;
+                width: 20%;
+                text-align: right;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        .hero {
+            .hero-text {
+                h1 {
+                    line-height: 35px;
+                }
+                button {
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+            }
+            .clients {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+/* Small Media Query */
+
+@media all and (min-width: 576px) and (max-width: 767px) {
+    header {
+        nav {
+            flex-wrap: wrap;
+            gap: 0px;
+            ul {
+                gap: 0px;
+                width: 60%;
+            }
+            .logo {
+                width: 40%;
+                margin-bottom: 20px;
+            }
+        }
+        .hero {
+            .hero-text {
+                button {
+                    margin-bottom: 20px;
+                }
+            }
+            .clients {
+                flex-wrap: wrap;
+                > div {
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
+
+
+/* Medium Media Query */
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    header {
+        nav {
+            gap: 0px;
+            ul {
+                gap: 10px;
+            }
+            button {
+                padding: 14px 30px;
+            }
+        }
+        .hero {
+            .hero-text {
+                button {
+                    margin-bottom: 20px;
+                }
+            }
+            .clients {
+                flex-wrap: wrap;
+                > div {
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
+
+
+/* Large Media Query */
+
+@media all and (min-width: 992px) and (max-width: 1199px) {
+    header {
+        nav {
+            ul {
+                gap: 10px;
+            }
+        }
+        .hero {
+            .hero-text {
+                button {
+                    margin-bottom: 20px;
+                }
+            }
+            .clients {
+                > div {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+
+/* XLarge Media Query */
+
+@media all and (min-width: 1200px) and (max-width: 1919px) {
+    header {
+        nav {
+            ul {
+                gap: 20px;
+            }
+        }
+        .hero {
+            .hero-text {
+                button {
+                    margin-bottom: 20px;
+                }
+            }
+            .clients {
+                > div {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}

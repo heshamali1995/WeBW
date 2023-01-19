@@ -1,0 +1,67 @@
+.bootcamp {
+  position: relative;
+  padding-bottom: 318px;
+}
+.bootcamp .dashboard {
+  position: absolute;
+  top: 0px;
+  right: 96px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.07);
+  z-index: 2;
+}
+.bootcamp .bootcamp-text {
+  width: 41%;
+  padding-top: 137px;
+  position: relative;
+}
+.bootcamp .bootcamp-text::after {
+  content: "";
+  position: absolute;
+  width: 79px;
+  height: 5px;
+  top: 94px;
+  left: 0px;
+  background-color: #ff6057;
+}
+.bootcamp .bootcamp-text h2 {
+  margin-bottom: 27px;
+}
+.bootcamp .bootcamp-text p {
+  margin-bottom: 32px;
+}
+.bootcamp .bootcamp-text .anchor {
+  align-items: center;
+  cursor: pointer;
+}
+.bootcamp .bootcamp-text .anchor a {
+  margin-right: 58px;
+}
+
+/* XSmall To XLarge Media Query */
+@media all and (max-width: 1919px) {
+  .bootcamp {
+    padding-bottom: 100px;
+  }
+  .bootcamp .container {
+    flex-direction: column;
+  }
+  .bootcamp .bootcamp-text {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .bootcamp .dashboard {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .bootcamp .dashboard img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=bootcamp.css.map */
