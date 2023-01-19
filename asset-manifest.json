@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/WeBW/static/css/main.25a64b10.css",
+    "main.js": "/WeBW/static/js/main.24bb9b28.js",
+    "static/media/Rectangle 9.png": "/WeBW/static/media/Rectangle 9.90fa00caf7cea2a4b88e.png",
+    "static/media/background.png": "/WeBW/static/media/background.082c1656ed9e90cac055.png",
+    "static/media/Poppins-Regular.ttf": "/WeBW/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Rectangle 11.png": "/WeBW/static/media/Rectangle 11.73ddcd28aefd4387f11d.png",
+    "static/media/dashboard3.png": "/WeBW/static/media/dashboard3.3acdf49f563fd74dd48b.png",
+    "static/media/dashboard2.png": "/WeBW/static/media/dashboard2.5052de96531ca0b67d97.png",
+    "static/media/dashboard4.png": "/WeBW/static/media/dashboard4.73433ee76cef6a5a8ed1.png",
+    "static/media/dashboard.png": "/WeBW/static/media/dashboard.51784650d54fa3d0416b.png",
+    "static/media/user.png": "/WeBW/static/media/user.8a72d9b15454afbd6646.png",
+    "index.html": "/WeBW/index.html",
+    "main.25a64b10.css.map": "/WeBW/static/css/main.25a64b10.css.map",
+    "main.24bb9b28.js.map": "/WeBW/static/js/main.24bb9b28.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25a64b10.css",
+    "static/js/main.24bb9b28.js"
+  ]
+}
