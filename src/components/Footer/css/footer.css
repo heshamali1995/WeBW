@@ -9,6 +9,8 @@ footer .col1 {
   width: 20%;
 }
 footer .col1 h2 {
+  display: inline-block;
+  text-align: center;
   font-size: 3rem;
   color: #fff;
   margin-bottom: 24px;
@@ -21,6 +23,8 @@ footer .col2 {
   padding-top: 23px;
 }
 footer .col2 h3 {
+  display: inline-block;
+  text-align: center;
   font-size: 1rem;
   color: #fff;
   margin-bottom: 26px;
@@ -32,6 +36,8 @@ footer .col3 {
   padding-top: 23px;
 }
 footer .col3 h3 {
+  display: inline-block;
+  text-align: center;
   font-size: 1rem;
   color: #fff;
   margin-bottom: 22px;

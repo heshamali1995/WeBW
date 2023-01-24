@@ -3,6 +3,9 @@
   width: 25%;
   margin-bottom: 136px;
 }
+.testemonial .heading h2 {
+  text-align: center;
+}
 .testemonial .calcs {
   justify-content: space-between;
   margin-bottom: 71px;

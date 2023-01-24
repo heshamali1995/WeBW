@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./css/works.css";
+import { DataContext } from "../../App";
+import Market from '../Market/Market';
 
 const Works = () => {
+    const DataConsumer = useContext(DataContext);
   return (
     <section className="works">
         <div className="container flex">
@@ -11,33 +14,13 @@ const Works = () => {
                 <button>About Us</button>
             </div>
             <div className="lists">
-                <div className="list flex">
-                    <div className="circle">
-                        <p>1</p>
-                    </div>
-                    <div className="text">
-                        <h3>Market Research</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                </div>
-                <div className="list flex">
-                    <div className="circle">
-                        <p>2</p>
-                    </div>
-                    <div className="text">
-                        <h3>Market Research</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                </div>
-                <div className="list flex">
-                    <div className="circle">
-                        <p>3</p>
-                    </div>
-                    <div className="text">
-                        <h3>Market Research</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                </div>
+                {
+                    DataConsumer?.market?.map((elem) => {
+                        return (
+                            <Market elem={elem} key={elem.id}/>
+                        )
+                    })
+                }
             </div>
         </div>
     </section>

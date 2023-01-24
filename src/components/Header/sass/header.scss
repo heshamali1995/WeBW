@@ -28,13 +28,14 @@ header {
     nav {
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 213px;
+        margin-bottom: 106px;
         .logo {
             position: relative;
+            height: 49px;
             &::after {
                 content: "";
                 position: absolute;
-                top: 5px;
+                top: 4px;
                 left: 77px;
                 width: 13px;
                 height: 2px;
@@ -43,7 +44,7 @@ header {
             .v-image {
                 position: absolute;
                 left: 67px;
-                top: 9px;
+                top: 11px;
             }
         }
         .bars {
@@ -66,8 +67,12 @@ header {
 
     // Hero Section
     .hero {
+        .hero-container {
+            justify-content: space-between;
+        }
         .hero-text {
             width: 41%;
+            padding-top: 107px;
             h3 {
                 margin-bottom: 35px;
             }
@@ -94,6 +99,10 @@ header {
             top: 209px;
             right: 96px;
             box-shadow: 0px 0px 25px rgba(0,0,0,0.07 );
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
         .clients {
             width: 100%;
@@ -103,45 +112,6 @@ header {
             }
             div:last-of-type {
                 margin-right: 0px;
-            }
-        }
-    }
-}
-
-/* XSmall To XLarge Media Query */
-
-@media all and (max-width: 1919px) {
-    header {
-        nav {
-            margin-bottom: 100px;
-            gap: 20px;
-        }
-        .hero {
-            .hero-container {
-                flex-direction: column;
-                margin-bottom: 20px;
-            }
-            .hero-text {
-                width: 100%;
-            }
-            .dashboard {
-                position: relative;
-                top: 0px;
-                right: 0px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-}
-
-@media all and (min-width: 576px) and (max-width: 1919px) {
-    header {
-        .hero {
-            .hero-text {
-                width: 75%;
             }
         }
     }
@@ -165,19 +135,18 @@ header {
         }
         nav {
             flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
             ul.flex {
                 display: none;
             }
             .header-button {
                 width: 100%;
             }
-            .logo {
-                width: 70%;
-            }
             .bars {
                 display: block;
-                width: 20%;
                 text-align: right;
+                color: $black;
                 svg {
                     width: 30px;
                     height: 30px;
@@ -185,7 +154,13 @@ header {
             }
         }
         .hero {
+            .hero-container {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
             .hero-text {
+                width: 100%;
+                padding-top: 0px;
                 h1 {
                     line-height: 35px;
                 }
@@ -193,6 +168,12 @@ header {
                     margin-bottom: 20px;
                     width: 100%;
                 }
+            }
+            .dashboard {
+                position: relative;
+                width: 100%;
+                top: 0px;
+                right: 0px;
             }
             .clients {
                 flex-direction: column;
@@ -209,23 +190,40 @@ header {
         nav {
             flex-wrap: wrap;
             gap: 0px;
+            margin-bottom: 50px;
+            .logo {
+                width: 40%;
+            }
             ul {
                 gap: 0px;
                 width: 60%;
             }
-            .logo {
-                width: 40%;
-                margin-bottom: 20px;
+            button {
+                margin: 30px auto;
             }
         }
         .hero {
+            .hero-container {
+                width: 100%;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
             .hero-text {
+                width: 75%;
+                padding-top: 0px;
                 button {
                     margin-bottom: 20px;
                 }
             }
+            .dashboard {
+                position: relative;
+                width: 100%;
+                top: 0px;
+                right: 0px;
+            }
             .clients {
                 flex-wrap: wrap;
+                justify-content: flex-start;
                 > div {
                     width: 48%;
                 }
@@ -233,7 +231,6 @@ header {
         }
     }
 }
-
 
 /* Medium Media Query */
 
@@ -245,29 +242,45 @@ header {
                 gap: 10px;
             }
             button {
-                padding: 14px 30px;
+                padding: 12px 28px;
             }
         }
         .hero {
+            .hero-container {
+                width: 100%;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
             .hero-text {
+                padding-top: 0px;
+                width: 80%;
                 button {
                     margin-bottom: 20px;
                 }
             }
+            .dashboard {
+                position: relative;
+                top: 0px;
+                right: 0px;
+            }
             .clients {
                 flex-wrap: wrap;
+                justify-content: flex-start;
                 > div {
-                    width: 48%;
+                    width: 31%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
     }
 }
 
-
 /* Large Media Query */
 
-@media all and (min-width: 992px) and (max-width: 1199px) {
+@media all and (min-width: 992px) and (max-width: 1919px) {
     header {
         nav {
             ul {
@@ -276,40 +289,36 @@ header {
         }
         .hero {
             .hero-text {
+                width: 50%;
+                padding: 0px 10px;
                 button {
-                    margin-bottom: 20px;
+                    margin-bottom: 100px;
                 }
+            }
+            .dashboard {
+                width: 40%;
             }
             .clients {
                 > div {
-                    width: 25%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
     }
 }
 
-
 /* XLarge Media Query */
 
 @media all and (min-width: 1200px) and (max-width: 1919px) {
     header {
-        nav {
-            ul {
-                gap: 20px;
-            }
-        }
         .hero {
             .hero-text {
-                button {
-                    margin-bottom: 20px;
-                }
+                padding: 107px 10px 0px 10px;
             }
-            .clients {
-                > div {
-                    width: 25%;
-                }
-            }
+
         }
     }
 }

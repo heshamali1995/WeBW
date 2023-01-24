@@ -1,7 +1,12 @@
 .platform {
-  height: 883px;
   position: relative;
   padding-top: 166px;
+  margin-bottom: 378px;
+}
+.platform .rectangle {
+  position: absolute;
+  top: -362px;
+  left: -973px;
 }
 .platform .container {
   justify-content: flex-end;
@@ -9,7 +14,7 @@
 .platform .dashboard {
   position: absolute;
   top: 0px;
-  left: -150px;
+  left: -8%;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.07);
 }
 .platform .platform-text {
@@ -40,17 +45,20 @@
   margin-right: 58px;
 }
 
-/* XSmall To XLarge Media Query */
-@media all and (max-width: 1919px) {
+/* XSmall To Medium Media Query */
+@media all and (max-width: 991px) {
   .platform {
-    height: 100%;
     padding-top: 30px;
+    margin-bottom: 50px;
   }
   .platform p {
     color: #3b3a3a;
   }
   .platform .container {
     flex-direction: column;
+  }
+  .platform .rectangle {
+    left: -1400px;
   }
   .platform .dashboard {
     position: relative;
@@ -65,6 +73,37 @@
   .platform .platform-text {
     width: 100%;
     margin-bottom: 50px;
+  }
+}
+/* Large To XLarge Media Query */
+@media all and (min-width: 992px) and (max-width: 1919px) {
+  .platform {
+    padding-top: 0px;
+    margin-bottom: 250px;
+  }
+  .platform .rectangle {
+    left: -1300px;
+    top: -700px;
+  }
+  .platform .platform-text {
+    width: 50%;
+  }
+  .platform .dashboard {
+    width: 50%;
+  }
+  .platform .dashboard img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* XLarge Media Query */
+@media all and (min-width: 1200px) and (max-width: 1919px) {
+  .platform {
+    padding-top: 166px;
+  }
+  .platform .rectangle {
+    left: -1100px;
+    top: -600px;
   }
 }
 

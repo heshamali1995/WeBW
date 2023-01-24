@@ -2,10 +2,14 @@ import React from 'react';
 import "./css/bootcamp.css";
 import arrow from "../../assets/images/arrow.png";
 import dashboard from "../../assets/images/dashboard4.png";
+import Rectangle from "../../assets/images/Rectangle 11.png";
 
 const Bootcamp = () => {
   return (
     <section className="bootcamp">
+        <div className="rectangle">
+          <img src={Rectangle} alt="rectangle" />
+        </div>
         <div className="container flex">
             <div className="bootcamp-text">
                 <h2>Best Platform for the Technological Era</h2>

@@ -13,11 +13,6 @@ $classes: (col1, #F1291E), (col2, #36C5AD), (col3, #CB4BF8), (col4, #56E65B);
 .browser {
     padding: 51px 0px 89px 0px;
     position: relative;
-    .rectangle {
-        position: absolute;
-        top: 412px;
-        left: -973px;
-    }
     .container {
         justify-content: space-between;
     }
@@ -90,10 +85,6 @@ $classes: (col1, #F1291E), (col2, #36C5AD), (col3, #CB4BF8), (col4, #56E65B);
 
 @media all and (max-width: 575px) {
     .browser {
-        .rectangle {
-            top: 700px;
-            left: -1400px;
-        }
         .container {
             flex-direction: column;
         }
@@ -126,22 +117,6 @@ $classes: (col1, #F1291E), (col2, #36C5AD), (col3, #CB4BF8), (col4, #56E65B);
                     }
                 }
             }
-        }
-        .rectangle {
-            top: 500px;
-            left: -1100px;
-        }
-    }
-}
-
-
-/* Medium Media Query */
-
-@media all and (min-width: 768px) and (max-width: 991px) {
-    .browser {
-        .rectangle {
-            top: 500px;
-            left: -1100px;
         }
     }
 }

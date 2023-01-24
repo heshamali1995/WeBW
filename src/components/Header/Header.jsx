@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./css/header.css";
-import { Link as LinkScroll } from "react-scroll";
 import logoImage from "../../assets/images/St    dy.png";
 import vImage from "../../assets/images/v.png";
 import dashboard from "../../assets/images/dashboard.png";
-import shopify from "../../assets/images/shopify.png";
-import nearpad from "../../assets/images/nearpad.png";
-import bench from "../../assets/images/bench.png";
-import forbes from "../../assets/images/forbes.png";
-import bumble from "../../assets/images/bumble.png";
 import { HiBars3 } from "react-icons/hi2";
+import Client from '../Client/Client';
+import List from '../List/List';
+import { DataContext } from '../../App';
 
 const Header = () => {
+    const DataConsumer = useContext(DataContext);
     const [state, setState] = useState(false);
     const showMenu = () => {
         setState(!state)
@@ -19,28 +17,16 @@ const Header = () => {
   return (
     <header>
         <div className="container">
+            {/* Dropdown Menu */}
             <div className={`dropdown-menu ${state ? "show" : ""}`} >
                 <ul>
-                    <li>
-                        <LinkScroll to="browser" spy={true} onClick={() => setState(false)}>
-                            bROWSER
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="bootcamp" spy={true} onClick={() => setState(false)} offset={-60}>
-                            bOOTCAMPS
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="works" spy={true} onClick={() => setState(false)} offset={-60}>
-                            hOW it wORKS
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="testemonial" spy={true} onClick={() => setState(false)} offset={-60}>
-                            tESTEMONIAL
-                        </LinkScroll>
-                    </li>
+                    {
+                        DataConsumer?.list?.map((elem) => {
+                            return (
+                                <List elem={elem} key={elem.id} showMenu={showMenu}/>
+                            )
+                        })
+                    }
                 </ul>
             </div>
             {/* Start Navbar */}
@@ -53,26 +39,13 @@ const Header = () => {
                     <HiBars3 />
                 </div>
                 <ul className="flex">
-                    <li>
-                        <LinkScroll to="browser" spy={true}>
-                            bROWSER
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="bootcamp" spy={true} offset={-60}>
-                            bOOTCAMPS
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="works" spy={true} offset={-60}>
-                            hOW it wORKS
-                        </LinkScroll>
-                    </li>
-                    <li>
-                        <LinkScroll to="testemonial" spy={true} offset={-60}>
-                            tESTEMONIAL
-                        </LinkScroll>
-                    </li>
+                    {
+                        DataConsumer?.list?.map((elem) => {
+                            return (
+                                <List elem={elem} onClick={() => setState(false)} key={elem.id}/>
+                            )
+                        })
+                    }
                 </ul>
                 <button className="header-button">About Us</button>
             </nav>
@@ -91,21 +64,13 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="clients flex">
-                    <div>
-                        <img src={shopify} alt="client" />
-                    </div>
-                    <div>
-                        <img src={nearpad} alt="client" />
-                    </div>
-                    <div>
-                        <img src={bench} alt="client" />
-                    </div>
-                    <div>
-                        <img src={forbes} alt="client" />
-                    </div>
-                    <div>
-                        <img src={bumble} alt="client" />
-                    </div>
+                    {
+                        DataConsumer?.header?.map((client) => {
+                            return (
+                                <Client client={client} key={client.id}/>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

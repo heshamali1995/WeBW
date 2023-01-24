@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import "./css/testemonial.css";
 import User from "../../assets/images/user.png";
 import Star from "../../assets/images/star.png";
+import TestSection from '../TestSection/TestSection';
+import { DataContext } from "../../App";
 
 const Testemonial = () => {
     const [count, setCount] = useState(0);
     const [state, setState] = useState(false);
     const ref = useRef(null);
+    const DataConsumer = useContext(DataContext);
 
     // Observer Function
     useEffect(() => {
@@ -37,22 +40,13 @@ const Testemonial = () => {
                 <h2>Don't Just Take our Word for it!</h2>
             </div>
             <div className="calcs flex" ref={ref}>
-                <div className="calc">
-                    <p className="number">{count}</p>
-                    <p className="type">Downloads</p>
-                </div>
-                <div className="calc">
-                    <p className="number">{count}</p>
-                    <p className="type">Active User</p>
-                </div>
-                <div className="calc">
-                    <p className="number">{count}</p>
-                    <p className="type">Positive Feedback</p>
-                </div>
-                <div className="calc">
-                    <p className="number">{count}</p>
-                    <p className="type">+ rating</p>
-                </div>
+                {
+                    DataConsumer?.testemonial?.map((elem) => {
+                        return (
+                            <TestSection elem={elem} count={count} key={elem.id}/>
+                        )
+                    })
+                }
             </div>
             <div className="feedback flex">
                 <div className="user-container">

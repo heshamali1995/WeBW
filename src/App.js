@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "./sass/style.css";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -13,7 +14,10 @@ import Works from './components/HowItWorks/Works';
 import Testemonial from './components/Testimonial/Testemonial';
 import Footer from './components/Footer/Footer';
 
+export const DataContext = React.createContext();
+
 const App = () => {
+  const [data, setData] = useState(null);
   const [toggle, setToggle] = useState(false);
   // Toggle Navigate Button
   const scrollIntoView = () => window.scrollY >= 657 ? setToggle(true) : setToggle(false);
@@ -21,6 +25,12 @@ const App = () => {
   const navigateToTop = () => window.scrollTo(0, 0);
   useEffect(() => {
     window.onscroll = scrollIntoView
+  }, []);
+  // Fetch Data From JSON File
+  useEffect(() => {
+    axios.get("./data.json").then((resp) => {
+      setData(resp.data)
+    })
   }, []);
   return (
     <>
@@ -30,14 +40,16 @@ const App = () => {
         onClick={navigateToTop}>
         <FaArrowUp />
       </div>
-      <Header />
-      <Browser />
-      <Platform />
-      <Overview />
-      <Bootcamp />
-      <Works />
-      <Testemonial />
-      <Footer />
+      <DataContext.Provider value={data}>
+        <Header />
+        <Browser />
+        <Platform />
+        <Overview />
+        <Bootcamp />
+        <Works />
+        <Testemonial />
+        <Footer />
+      </DataContext.Provider>
     </>
   )
 }

@@ -2,10 +2,14 @@ import React from 'react';
 import "./css/platform.css";
 import arrow from "../../assets/images/arrow.png";
 import dashboard from "../../assets/images/dashboard2.png";
+import Rectangle from "../../assets/images/Rectangle 9.png";
 
 const Platform = () => {
   return (
     <section className="platform">
+        <div className="rectangle">
+            <img src={Rectangle} alt="rectangle" />
+        </div>
         <div className="container flex">
             <div className="platform-text">
                 <h2>Best Platform for the Technological Era</h2>

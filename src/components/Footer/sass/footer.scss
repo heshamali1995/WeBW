@@ -10,6 +10,8 @@ footer {
     .col1 {
         width: 20%;
         h2 {
+            display: inline-block;
+            text-align: center;
             font-size: pxToRem(48);
             color: $white;
             margin-bottom: 24px;
@@ -22,6 +24,8 @@ footer {
     .col2 {
         padding-top: 23px;
         h3 {
+            display: inline-block;
+            text-align: center;
             font-size: pxToRem(16);
             color: $white;
             margin-bottom: 26px;
@@ -33,6 +37,8 @@ footer {
     .col3 {
         padding-top: 23px;
         h3 {
+            display: inline-block;
+            text-align: center;
             font-size: pxToRem(16);
             color: $white;
             margin-bottom: 22px;
