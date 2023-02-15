@@ -26,7 +26,6 @@ header nav {
 }
 header nav .logo {
   position: relative;
-  height: 49px;
 }
 header nav .logo::after {
   content: "";

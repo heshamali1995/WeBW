@@ -57,7 +57,7 @@ const Testemonial = () => {
                         <div className="info">
                             <h3>Florrie Jacobs</h3>
                             <p className="position">CEO of Company</p>
-                            <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+                            <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
                             <div className="stars flex">
                                 <img src={Star} alt="star" />
                                 <img src={Star} alt="star" />
